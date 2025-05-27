@@ -40,7 +40,7 @@ DetailFlow encodes tokens with an inherent semantic ordering, where each subsequ
 
 ## Acknowledgement
 
-We thank the great work from [VAR](https://github.com/FoundationVision/VAR), [LlamaGen](https://github.com/FoundationVision/LlamaGen) and [LLaVA](https://github.com/haotian-liu/LLaVA).
+We thank the great work from [SoftVQ-VAE](https://github.com/Hhhhhhao/continuous_tokenizer/tree/main) and [LlamaGen](https://github.com/FoundationVision/LlamaGen).
 
 ## 🔥 Open positions
 We are hiring interns and full-time researchers at the ByteFlow Group, ByteDance, with a focus on multimodal understanding and generation (preferred base: Hangzhou, Beijing, and Shenzhen). If you are interested, please contact yolomemos@gmail.com.
