@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="This work introduces DetailFlow, a coarse-to-fine 1D autoregressive (AR) image generation method that models images through a novel next-detail prediction strategy.">
+  <meta property="og:title" content="DetailFlow: 1D Coarse-to-Fine Autoregressive Image Generation via Next-Detail Prediction"/>
+  <meta property="og:description" content="This work introduces DetailFlow, a coarse-to-fine 1D autoregressive (AR) image generation method that models images through a novel next-detail prediction strategy."/>
+  <meta property="og:url" content="https://byteflow-ai.github.io/DetailFlow/"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/images/demo.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="DetailFlow: 1D Coarse-to-Fine Autoregressive Image Generation via Next-Detail Prediction">
+  <meta name="twitter:description" content="This work introduces DetailFlow, a coarse-to-fine 1D autoregressive (AR) image generation method that models images through a novel next-detail prediction strategy.">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/demo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="coarse-to-fine, autoregressive image generation, 1D tokenizer">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>DetailFlow</title>
+<!--  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">-->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">DetailFlow: 1D Coarse-to-Fine Autoregressive Image Generation via Next-Detail Prediction</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+               <span class="author-block">
+                <a href="https://yolomax.com/" target="_blank">Yiheng Liu</a><sup>*</sup>,</span>
+              <span class="author-block">
+                <a href="https://github.com/QuLiao1117" target="_blank">Liao Qu</a><sup>*</sup>,</span>
+              <span class="author-block">
+                <a href="mailto:muxizju@gmail.com" target="_blank">Huichao Zhang</a><sup></sup>,</span>
+               <span class="author-block">Xu Wang<sup>&#8224</sup>,</span>
+               <span class="author-block">
+                <a href="https://enjoyyi.github.io/" target="_blank">Yi Jiang</a><sup></sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=uRCc-McAAAAJ&hl=zh-TW" target="_blank">Yiming Gao</a><sup></sup>,</span>
+              <span class="author-block">
+                <a href="https://github.com/xiaohu2015" target="_blank">Hu Ye</a><sup></sup>,</span>
+              <br>
+              <span class="author-block">Xian Li<sup></sup>,</span>
+              <span class="author-block">Shuai Wang<sup></sup>,</span>
+              <span class="author-block">Daniel K. Du<sup></sup>,</span>
+              <span class="author-block">Shu Chen<sup></sup>,</span>
+              <span class="author-block">Zehuan Yuan<sup></sup>,</span>
+              <span class="author-block">Xinglong Wu<sup></sup>
+
+            </div>
+
+             <div style="overflow: hidden; background-color: #fff;">
+              <div class="logo" style="padding: 12px;">
+                <a href="https://www.bytedance.com/en/" style="text-decoration: none; font-size: 16px;">
+                  <img src="static/images/ByteDance_logo_English.svg" alt="bytedance Logo" style="width: auto; height: 30px;">
+                </a>
+              </div>
+            </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/ByteFlow-AI/DetailFlow" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://huggingface.co/ByteFlow-AI" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <span>&#129303;</span>
+                  </span>
+                  <span>Models</span>
+                </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <!-- <span class="link-block">
+                  <a href="TODO" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container"  align="center">
+    <div class="hero-body">
+        <img src="static/images/demo.png" alt="MY ALT TEXT" style="width: 80%;"/>
+        <!-- <h2 class="subtitle has-text-centered">
+          Overview of the proposed layer-wise calibration procedure before fine-tuning.
+        </h2> -->
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We presents DetailFlow, a coarse-to-fine 1D autoregressive (AR) image generation method that models images through a novel next-detail prediction strategy. By learning a resolution-aware token sequence supervised with progressively degraded images, DetailFlow enables the generation process to start from the global structure and incrementally refine details. This coarse-to-fine 1D token sequence aligns well with the autoregressive inference mechanism, providing a more natural and efficient way for the AR model to generate complex visual content. Our compact 1D AR model achieves high-quality image synthesis with significantly fewer tokens than previous approaches, i.e. VAR/VQGAN. We further propose a parallel inference mechanism with self-correction that accelerates generation speed by approximately 8× while reducing accumulation sampling error inherent in teacher-forcing supervision. On the ImageNet 256x256 benchmark, our method achieves 2.96 gFID with 128 tokens, outperforming VAR (3.3 FID) and FlexVAR (3.05 FID), which both require 680 tokens in their AR models. Moreover, due to the significantly reduced token count and parallel inference mechanism, our method runs nearly 2× faster inference speed compared to VAR and FlexVAR. Extensive experimental results demonstrate DetailFlow's superior generation quality and efficiency compared to existing state-of-the-art methods.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+  <!-- Paper method -->
+<section class="section hero ">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <img src="static/images/method.png" alt="MY ALT TEXT" style="width: 100%;"/>
+
+          <p>
+            Comparison of our DetailFlow approach with existing methods, showing that DetailFlow achieves better image quality with fewer tokens and times.
+          </p>
+        </div>
+
+        <!-- <div class="content has-text-justified">
+          <img src="static/images/cluster.png" alt="MY ALT TEXT" style="width: 100%;"/>
+
+          <p>
+            <b>TokenFlow can combine both semantic and low-level similarity (e.g. birds with different background can be mapped into two different index) and exhibits significantly smoother distribution compared to others.</b>
+          </p>
+        </div> -->
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper method -->
+
+
+  <!-- End image carousel -->
+
+<!--&lt;!&ndash; Youtube video &ndash;&gt;-->
+<!--<section class="hero is-small is-light">-->
+<!--  <div class="hero-body">-->
+<!--    <div class="container">-->
+<!--      &lt;!&ndash; Paper video. &ndash;&gt;-->
+<!--      <h2 class="title is-3">Video Presentation</h2>-->
+<!--      <div class="columns is-centered has-text-centered">-->
+<!--        <div class="column is-four-fifths">-->
+<!--          -->
+<!--          <div class="publication-video">-->
+<!--            &lt;!&ndash; Youtube embed code here &ndash;&gt;-->
+<!--            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+<!--&lt;!&ndash; End youtube video &ndash;&gt;-->
+
+
+<!--&lt;!&ndash; Video carousel &ndash;&gt;-->
+<!--<section class="hero is-small">-->
+<!--  <div class="hero-body">-->
+<!--    <div class="container">-->
+<!--      <h2 class="title is-3">Another Carousel</h2>-->
+<!--      <div id="results-carousel" class="carousel results-carousel">-->
+<!--        <div class="item item-video1">-->
+<!--          <video poster="" id="video1" autoplay controls muted loop height="100%">-->
+<!--            &lt;!&ndash; Your video file here &ndash;&gt;-->
+<!--            <source src="static/videos/carousel1.mp4"-->
+<!--            type="video/mp4">-->
+<!--          </video>-->
+<!--        </div>-->
+<!--        <div class="item item-video2">-->
+<!--          <video poster="" id="video2" autoplay controls muted loop height="100%">-->
+<!--            &lt;!&ndash; Your video file here &ndash;&gt;-->
+<!--            <source src="static/videos/carousel2.mp4"-->
+<!--            type="video/mp4">-->
+<!--          </video>-->
+<!--        </div>-->
+<!--        <div class="item item-video3">-->
+<!--          <video poster="" id="video3" autoplay controls muted loop height="100%">\-->
+<!--            &lt;!&ndash; Your video file here &ndash;&gt;-->
+<!--            <source src="static/videos/carousel3.mp4"-->
+<!--            type="video/mp4">-->
+<!--          </video>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+<!--&lt;!&ndash; End video carousel &ndash;&gt;-->
+
+
+
+<!--&lt;!&ndash; Paper poster &ndash;&gt;-->
+<!--<section class="hero is-small is-light">-->
+<!--  <div class="hero-body">-->
+<!--    <div class="container">-->
+<!--      <h2 class="title">Poster</h2>-->
+
+<!--      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">-->
+<!--          </iframe>-->
+<!--        -->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </section>-->
+<!--&lt;!&ndash;End paper poster &ndash;&gt;-->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+      arXiv preprint placeholder
+    </code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+<div style="width: 1000px; margin: 0 auto;">
+  <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=l_pwfGfOMZ5wqA1GXPSrcEzT_5bvBF9ZRm3tTlZpW8Q&cl=ffffff&w=a"></script>
+</div>
+  
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
