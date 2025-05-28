@@ -28,7 +28,7 @@ DetailFlow encodes tokens with an inherent semantic ordering, where each subsequ
 
 ## 📰 News
 
-**2025.05.28**:  🎉🎉🎉 DetailFlow is released! 🎉🎉🎉  See our [project page](https://byteflow-ai.github.io/DetailFlow/) and [paper](https://arxiv.org) .
+**2025.05.28**:  🎉🎉🎉 DetailFlow is released! 🎉🎉🎉  See our [paper](https://arxiv.org) .
 
 
 ## 📑 Open-source Plan
