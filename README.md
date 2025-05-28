@@ -3,7 +3,6 @@
 
 [![DetailFlow](https://img.shields.io/badge/Paper-DetailFlow-2b9348.svg?logo=arXiv)](https://arxiv.org/abs/2505.21473)&nbsp;
 [![huggingface weights](https://img.shields.io/badge/%F0%9F%A4%97%20Weights-DetailFlow-yellow)](https://huggingface.co/ByteFlow-AI)&nbsp;
-<!-- [![project page](https://img.shields.io/badge/Project_page-More_visualizations-green?logo=bytedance)](https://byteflow-ai.github.io/DetailFlow/)&nbsp; -->
 ![Visitors](https://visitor-badge.laobi.icu/badge?page_id=ByteFlow-AI.DetailFlow)
 [![GitHub closed issues](https://img.shields.io/github/issues-closed/ByteFlow-AI/DetailFlow?color=blue&label=Issues)](https://github.com/ByteFlow-AI/DetailFlow/issues?q=is%3Aissue+is%3Aclosed) 
 
@@ -40,7 +39,7 @@ DetailFlow encodes tokens with an inherent semantic ordering, where each subsequ
 
 ## Acknowledgement
 
-We thank the great work from [SoftVQ-VAE](https://github.com/Hhhhhhao/continuous_tokenizer/tree/main) and [LlamaGen](https://github.com/FoundationVision/LlamaGen).
+We thank the great work from [SoftVQ-VAE](https://github.com/Hhhhhhao/continuous_tokenizer/tree/main), [LlamaGen](https://github.com/FoundationVision/LlamaGen) and [PAR](https://github.com/YuqingWang1029/PAR/tree/main).
 
 ## 🔥 Open positions
 We are hiring interns and full-time researchers at the ByteFlow Group, ByteDance, with a focus on multimodal understanding and generation (preferred base: Hangzhou, Beijing, and Shenzhen). If you are interested, please contact yolomemos@gmail.com.
