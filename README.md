@@ -1,9 +1,9 @@
 # DetailFlow🚀: 1D Coarse-to-Fine Autoregressive Image Generation via Next-Detail Prediction
 <div align="center">
 
-[![DetailFlow](https://img.shields.io/badge/Paper-DetailFlow-2b9348.svg?logo=arXiv)](https://arxiv.org)&nbsp;
+[![DetailFlow](https://img.shields.io/badge/Paper-DetailFlow-2b9348.svg?logo=arXiv)](https://arxiv.org/abs/2505.21473)&nbsp;
 [![huggingface weights](https://img.shields.io/badge/%F0%9F%A4%97%20Weights-DetailFlow-yellow)](https://huggingface.co/ByteFlow-AI)&nbsp;
-[![project page](https://img.shields.io/badge/Project_page-More_visualizations-green?logo=bytedance)](https://byteflow-ai.github.io/DetailFlow/)&nbsp;
+<!-- [![project page](https://img.shields.io/badge/Project_page-More_visualizations-green?logo=bytedance)](https://byteflow-ai.github.io/DetailFlow/)&nbsp; -->
 ![Visitors](https://visitor-badge.laobi.icu/badge?page_id=ByteFlow-AI.DetailFlow)
 [![GitHub closed issues](https://img.shields.io/github/issues-closed/ByteFlow-AI/DetailFlow?color=blue&label=Issues)](https://github.com/ByteFlow-AI/DetailFlow/issues?q=is%3Aissue+is%3Aclosed) 
 
@@ -13,7 +13,7 @@
 
 ## 🌿 Introduction
 
-We present DetailFlow,  a coarse-to-fine 1D autoregressive (AR) image generation method that models images through a novel next-detail prediction strategy. By learning a resolution-aware token sequence supervised with progressively degraded images, DetailFlow enables the generation process to start from the global structure and incrementally refine details. 
+We present DetailFlow, a coarse-to-fine 1D autoregressive (AR) image generation method that models images through a novel next-detail prediction strategy. By learning a resolution-aware token sequence supervised with progressively degraded images, DetailFlow enables the generation process to start from the global structure and incrementally refine details. 
 
 
 <div align='center'>
@@ -28,7 +28,7 @@ DetailFlow encodes tokens with an inherent semantic ordering, where each subsequ
 
 ## 📰 News
 
-**2025.05.28**:  🎉🎉🎉 DetailFlow is released! 🎉🎉🎉  See our [paper](https://arxiv.org) .
+**2025.05.28**:  🎉🎉🎉 DetailFlow is released! 🎉🎉🎉  See our [paper](https://arxiv.org/abs/2505.21473) .
 
 
 ## 📑 Open-source Plan
