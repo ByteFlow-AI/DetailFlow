@@ -16,7 +16,7 @@ We present DetailFlow, a coarse-to-fine 1D autoregressive (AR) image generation 
 
 
 <div align='center'>
-<img src="./assets/demo.png" class="interpolation-image" alt="teasor." height="100%" width="100%" />
+<img src="./assets/demo.png" class="interpolation-image" alt="teasor." height="95%" width="95%" />
 </div>
 
 DetailFlow encodes tokens with an inherent semantic ordering, where each subsequent token contributes additional high-resolution information.  On the ImageNet 256×256 benchmark, our method achieves 2.96 gFID with 128 tokens, outperforming VAR (3.3 FID) and FlexVAR (3.05 FID), which both require 680 tokens in their AR models. Moreover, due to the significantly reduced token count and parallel inference mechanism, our method runs nearly 2× faster inference speed compared to VAR and FlexVAR. 
