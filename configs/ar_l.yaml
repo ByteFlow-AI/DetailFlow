@@ -1,0 +1,27 @@
+gpt_model: GPT-L
+
+gpt_type: c2i
+ema: True
+cls_token_num: 1
+dropout_p: 0.1
+token_dropout_p: 0.1
+drop_path_rate: 0.0
+compile: True
+results_dir: ./logs/artask/debug
+data_path: ImageNet2012/train
+vq_ema: True
+    
+num_classes: 1000
+epochs: 300
+lr: 1e-4
+weight_decay: 5e-2
+beta1: 0.9
+beta2: 0.95
+max_grad_norm: 1.0
+global_batch_size: 256
+global_seed: 0
+num_workers: 24
+log_every: 50
+save_epochs: 2
+mixed_precision: bf16 
+learnable_tok_embeddings: True
