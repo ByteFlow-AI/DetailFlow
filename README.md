@@ -26,8 +26,11 @@ DetailFlow encodes tokens with an inherent semantic ordering, where each subsequ
 </div>
 
 ## 📰 News
+
 **2025.06.24**: 🎉🎉🎉 The code and model weights of Detailflow have been open-sourced.
+
 **2025.06.16**: The code and model weights are finalized and currently undergoing legal review. We expect to release them soon.
+
 **2025.05.28**:  🎉🎉🎉 DetailFlow is released! 🎉🎉🎉  See our [paper](https://arxiv.org/abs/2505.21473) .
 
 
